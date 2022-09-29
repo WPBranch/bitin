@@ -10,7 +10,7 @@ Copyright: ikamal
 
 == Description ==
 
-Bitin is a free modern block-based WordPress theme. The Bricksy theme combines timeless design elements with a modern layout and easy-to-use features. It is packed with ready-to-use block patterns which make creating pages from scratch an easy drag-and-drop experience. The theme is built to take advantage of the Full Site Editing features and it includes many block patterns that can help you create professionally designed layouts in just a few clicks.
+Bitin is a free modern block-based WordPress theme. The Bitin theme combines timeless design elements with a modern layout and easy-to-use features. It is packed with ready-to-use block patterns which make creating pages from scratch an easy drag-and-drop experience. The theme is built to take advantage of the Full Site Editing features and it includes many block patterns that can help you create professionally designed layouts in just a few clicks.
 
 == Changelog ==
 1.0.0 Initial release
