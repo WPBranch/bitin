@@ -2,7 +2,9 @@ const gulp = require('gulp'),
 	clean = require('gulp-clean'),
 	concatCss = require('gulp-concat-css'),
 	cssnano = require('gulp-cssnano'),
-	rename = require('gulp-rename');
+	rename = require('gulp-rename'),
+	zip = require('gulp-zip');
+
 
 gulp.task('watch', function () {
 	gulp.watch(['assets/css/**/*.css']).on(
@@ -44,6 +46,41 @@ gulp.task('minify-blocks', function () {
 		.pipe(cssnano())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(gulp.dest('assets/css/blocks'));
+});
+
+// Zip files up
+gulp.task('zip', function () {
+	return gulp.src([
+	  '*',
+	  './assets/**/*',
+	  './css/*',
+	  './fonts/*',
+	  './images/**/*',
+	  './inc/**/*',
+	  './js/**/*',
+	  './languages/*',
+	  './sass/**/*',
+	  './template-parts/*',
+	  './templates/*',
+	  '!bower_components',
+		'!node_modules',
+		'!.babelrc',
+		'!.editorconfig',
+	  '!.eslintrc',
+	  '!.eslintignore',
+	  '!.gitignore',
+	  '!.stylelintignore',
+	  '!.stylelintrc.json',
+	  '!composer.json',
+	  '!gulpfile.js',
+	  '!package-lock.json',
+	  '!package.json',
+	  '!phpcs.xml.dist',
+	  '!phpstan.neon.dist',
+	  '!postcss.config.js',
+	 ], {base: "."})
+	 .pipe(zip('bitin.zip'))
+	 .pipe(gulp.dest('../'));
 });
 
 gulp.task(
